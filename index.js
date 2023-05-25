@@ -1,5 +1,16 @@
+
+/*
+1. call fetch() on the GoT API inside fetchBooks()
+2.Parse the result from JSON into a JS oject
+3. Pass the JS object result to renderBooks()
+4. Using return fetch instead of just fetch isnt needed
+5. .then(response)... converts the json to javascript so we can work with it
+*/
+
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
+  return fetch("https://anapioficeandfire.com/api/books")
+    .then((response) => response.json())
+    .then(books => renderBooks(books));
   
 }
 
